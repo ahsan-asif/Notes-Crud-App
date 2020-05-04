@@ -7,7 +7,7 @@ import {Provider} from "react-redux";
 import {composeWithDevTools} from "redux-devtools-extension";
 import rootReducer from "./reducers/index";
 import thunk from "redux-thunk";
-import {BrowserRouter, Switch, Route, withRouter, Redirect} from "react-router-dom";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 import Login from "./components/Login";
 import Header from "./routes/HeaderFooter";
 import LoadingComponent from "./components/LoadingComponent";

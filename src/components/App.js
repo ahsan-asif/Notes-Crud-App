@@ -72,6 +72,7 @@ class App extends Component {
           <div className='col-sm-3'>
             <img
               className='img img-responsive img-circle'
+              alt=""
               height='100px'
               src={this.props.userData.photoURL}
               style={{padding:'20px', borderRadius:'100%'}}

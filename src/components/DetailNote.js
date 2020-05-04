@@ -3,16 +3,35 @@ import {connect} from "react-redux";
 import SubmitComment from "./SubmitComment";
 import Comment from "./Comment";
 import {getComments} from "../actions/noteActions";
-import _ from "lodash";
+// import _ from "lodash";
 
 class DetailNote extends Component {
+ 
   
   componentDidMount() {
     this.props.getComments(this.props.match.params.id);
+    console.log(12);
   }
 
   renderComment = () => {
-      return 
+    console.log("redener",this.props.comments);
+    const {comments}= this.props;
+    console.log(comments);
+    return(
+      // comments.forEach(item=>{
+      //   console.log(item);
+      // })
+    // comments.map((com,key)=>{
+    //     console.log(0);
+    //     return(
+    //       <div key={key}> 
+    //      <div><b>Comment:</b> {com.commentBody}</div> 
+    //       <div> <b>User ID:</b> {com.uid}</div>
+    //       </div>
+    //     );
+    //   })
+    <div>s</div>
+    );
   };
 
   render() {
@@ -30,7 +49,9 @@ class DetailNote extends Component {
             <h3>{note.title}</h3>
             <p>{note.body}</p>
             <SubmitComment id={this.props.match.params.id} />
+            <Comment>
             {this.renderComment()}
+            </Comment>
           </div>
         </div>
       </div>

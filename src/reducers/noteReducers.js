@@ -1,6 +1,6 @@
 import {GET_NOTES} from "../actionTypes";
 
-export default function (state = {data: []}, action) {
+export default function (state = {data: [],comments:[]}, action) {
   switch (action.type) {
     case GET_NOTES:
       return {

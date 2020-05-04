@@ -10,6 +10,7 @@ class LoadingComponent extends Component {
     const {userLoading, noteLoading} = this.props;
     if (noteLoading === undefined) {
       this.props.getNotes();
+
     }
     if (userLoading === undefined) {
       this.props.getUser(); 
@@ -20,6 +21,7 @@ class LoadingComponent extends Component {
     // wait for user to get authenticated and try to load user
     if (nextProps.noteLoading === -1 && nextProps.user !== null) {
       this.props.getNotes();
+
     }
   }
   render() {

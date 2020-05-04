@@ -99,6 +99,7 @@ export function saveComment(noteId, comment) {
 }
 
 export function getComments(id) {
+  let dataArray=[];
   return (dispatch) => {
     fire
       .collection(`/notes/${id}/comments`)
@@ -106,10 +107,11 @@ export function getComments(id) {
       .then((snapshot) => {
         snapshot.docs.forEach((doc) => {
           // console.log("in action",doc.data())
+          dataArray.push(doc.data());
           //dispatch
           dispatch({
             type: "GET_COMMENT",
-            payload: doc.data(),
+            payload: dataArray,
           });
         });
       });
